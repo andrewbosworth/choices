@@ -37,8 +37,7 @@
 <?php
 if (isset($_POST['Email'])) {
 
-    // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "you@yourdomain.com";
+    $email_to = "andrewbosworth123@gmail.com";
     $email_subject = "New form submissions";
 
     function problem($error)
@@ -50,7 +49,6 @@ if (isset($_POST['Email'])) {
         die();
     }
 
-    // validation expected data exists
     if (
         !isset($_POST['Name']) ||
         !isset($_POST['Email']) ||
@@ -96,14 +94,12 @@ if (isset($_POST['Email'])) {
     $email_message .= "Email: " . clean_string($email) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
 
-    // create email headers
     $headers = 'From: ' . $email . "\r\n" .
         'Reply-To: ' . $email . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
-    <!-- include your success message below -->
 
     Thank you for contacting us. We will be in touch with you very soon.
 
